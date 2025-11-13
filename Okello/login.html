@@ -4,27 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Kogalo Comrades Association</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS (after Bootstrap) -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        .profile-preview {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: none;
+            margin: 10px auto;
+        }
+        .register-section {
+            display: none;
+        }
+        .register-section.active {
+            display: block;
+        }
+    </style>
 </head>
 <body class="login-page">
-    <div class="login-container">
-        <div class="login-box">
-            <h2>Welcome Back!</h2>
-            <form class="login-form" id="loginForm">
-                <div class="form-group">
-                    <input type="email" id="email" placeholder="Email Address" required>
+    <div class="login-container container py-5">
+        <div class="login-box card shadow-lg">
+            <div class="card-body">
+                <!-- Login Section -->
+                <div id="loginSection">
+                    <h2 class="card-title text-center mb-4">Welcome Back!</h2>
+                    <form class="login-form" id="loginForm">
+                        <div class="form-group mb-3">
+                            <input type="email" id="loginEmail" class="form-control" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="password" id="loginPassword" class="form-control" placeholder="Password" required>
+                        </div>
+                        <button type="submit" class="login-button btn btn-primary w-100">Login</button>
+                    </form>
+                    <div class="login-footer text-center mt-3">
+                        <p class="mb-2">Don't have an account? <a href="#" class="register-link">Register</a></p>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <input type="password" id="password" placeholder="Password" required>
+
+                <!-- Register Section -->
+                <div id="registerSection" class="register-section">
+                    <h2 class="card-title text-center mb-4">Create Account</h2>
+                    <form class="register-form" id="registerForm">
+                        <div class="text-center mb-3">
+                            <img id="profilePreview" class="profile-preview" src="#" alt="Profile Preview">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="profilePhoto" class="form-label">Profile Photo</label>
+                            <input type="file" id="profilePhoto" class="form-control" accept="image/*">
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="text" id="username" class="form-control" placeholder="Username" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="email" id="registerEmail" class="form-control" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="password" id="registerPassword" class="form-control" placeholder="Password" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="text" id="assets" class="form-control" placeholder="Assets/Interests (comma-separated)">
+                        </div>
+                        <button type="submit" class="register-button btn btn-primary w-100">Register</button>
+                    </form>
+                    <div class="text-center mt-3">
+                        <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+                    </div>
                 </div>
-                <button type="submit" class="login-button">Login</button>
-            </form>
-            <div class="login-footer">
-                <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
-                <a href="#" class="forgot-password">Forgot Password?</a>
             </div>
         </div>
     </div>
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
