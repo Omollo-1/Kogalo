@@ -1,0 +1,12 @@
+/ (root)
+|-- index.html          (Home page)
+|-- about.html          (About page - from previous answer)
+|-- membership.html     (Membership page)
+|-- events.html         (Events page)
+|-- blog.html           (Blog page)
+|-- contact.html        (Contact page)
+|-- login.html          (Login page)
+|-- assets/
+    |-- css/
+        |-- styles.css  (common styles for all pages)
+    |-- images/        (placeholder images if needed)

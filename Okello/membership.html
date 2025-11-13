@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DEKUT Comrades Association - Membership</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+<link href="assets/css/style1.css" rel="stylesheet" />
+<style>
+    /* Body with professional red-black gradient */
+    body {
+      background: linear-gradient(135deg, #8B0000 0%, #000000 100%);
+      color: #f1f1f1;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding-top: 70px; /* offset navbar */
+      min-height: 100vh;
+    }
+
+    /* Navbar styling */
+    nav.navbar {
+      background-color: rgba(0, 0, 0, 0.85) !important;
+      box-shadow: 0 0 15px rgba(255, 68, 68, 0.5);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1030;
+    }
+    nav.navbar .navbar-brand,
+    nav.navbar .nav-link {
+      color: #ff4444 !important;
+    }
+    nav.navbar .nav-link:hover,
+    nav.navbar .nav-link.active,
+    nav.navbar .nav-link:focus {
+      color: #f1f1f1 !important;
+      outline: none;
+      text-shadow: 0 0 10px #ff4444;
+    }
+    nav.navbar .dropdown-menu {
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+    nav.navbar .dropdown-menu .dropdown-item {
+      color: #f1f1f1;
+    }
+    nav.navbar .dropdown-menu .dropdown-item:hover,
+    nav.navbar .dropdown-menu .dropdown-item:focus {
+      background-color: #ff4444;
+      color: #000;
+      outline: none;
+    }
+
+    /* Page container */
+    main.container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-bottom: 3rem;
+    }
+
+    /* Heading */
+    h1 {
+      color: #ff4444;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    /* Category filter */
+    label[for="categoryFilter"] {
+      color: #ff7777;
+      font-weight: 600;
+    }
+    #categoryFilter {
+      background-color: #1a1a1a;
+      border: 1px solid #ff4444;
+      color: #f1f1f1;
+    }
+    #categoryFilter:focus {
+      border-color: #ff7777;
+      box-shadow: 0 0 8px #ff7777;
+      outline: none;
+      background-color: #330000;
+    }
+
+    /* Blog post cards */
+    .post-card {
+      background: rgba(0,0,0,0.6);
+      border: 1px solid #ff4444;
+      border-radius: 0.75rem;
+      box-shadow: 0 0 15px rgba(255, 68, 68, 0.5);
+      color: #f1f1f1;
+      transition: box-shadow 0.3s ease, transform 0.2s ease;
+    }
+    .post-card:hover,
+    .post-card:focus-within {
+      box-shadow: 0 0 25px #ff7777;
+      transform: translateY(-6px);
+      outline: none;
+    }
+    .post-card img {
+      border-top-left-radius: 0.75rem;
+      border-top-right-radius: 0.75rem;
+      max-height: 200px;
+      object-fit: cover;
+      width: 100%;
+    }
+    .card-body {
+      padding: 1rem 1.25rem;
+    }
+    .card-title {
+      color: #ff4444;
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+    .card-text {
+      color: #f1f1f1;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+    .text-muted {
+      color: #ff9999 !important;
+      font-size: 0.85rem;
+    }
+    .btn-outline-primary {
+      border-color: #ff4444;
+      color: #ff4444;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .btn-outline-primary:hover,
+    .btn-outline-primary:focus {
+      background-color: #ff4444;
+      color: #000;
+      border-color: #ff4444;
+      outline: none;
+      box-shadow: 0 0 10px #ff4444;
+    }
+
+    /* Pagination styling */
+    nav.pagination-nav {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    .pagination .page-link {
+      color: #ff4444;
+      border-color: #ff4444;
+      background-color: transparent;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+    .pagination .page-link:hover,
+    .pagination .page-link:focus {
+      background-color: #ff4444;
+      color: #000;
+      outline: none;
+    }
+    .pagination .page-item.active .page-link {
+      background-color: #ff4444;
+      border-color: #ff4444;
+      color: #000;
+      font-weight: 700;
+    }
+    .pagination .page-item.disabled .page-link {
+      color: #660000;
+      border-color: #330000;
+      pointer-events: none;
+      background-color: transparent;
+    }
+
+    /* Accessibility focus */
+    a:focus,
+    button:focus,
+    select:focus {
+      outline: 3px solid #ff4444;
+      outline-offset: 2px;
+    }
+
+    /* Responsive */
+    @media (max-width: 767.98px) {
+      .card-title {
+        font-size: 1.1rem;
+      }
+      .post-card img {
+        max-height: 150px;
+      }
+    }
+  </style>
+  
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">DEKUT Comrades Association</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navContent">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="membership.html">Membership</a></li>
+        <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="login.html"><i class="bi bi-box-arrow-in-right"></i> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container py-5">
+  <h1 class="mb-4" tabindex="0">Membership Benefits & Signup</h1>
+
+  <section aria-label="Membership Benefits" class="mb-5">
+    <h2>Why Join DEKUT Comrades Association?</h2>
+    <ul>
+      <li>Access exclusive events, workshops, and networking opportunities</li>
+      <li>Receive academic support and mentorship</li>
+      <li>Chance to apply for association scholarships</li>
+      <li>Volunteer and participate in impactful community projects</li>
+      <li>Connect with fellow students and build lifelong friendships</li>
+    </ul>
+  </section>
+
+  <section aria-label="Pricing tiers" class="mb-5">
+    <h2>Membership Pricing Tiers</h2>
+    <div class="row g-4 text-center">
+      <div class="col-md-4">
+        <div class="card shadow-sm rounded">
+          <div class="card-header tier-header">Basic</div>
+          <div class="card-body">
+            <p class="fs-2 fw-bold">Free</p>
+            <ul class="list-unstyled">
+              <li>Access to newsletters</li>
+              <li>Basic event participation</li>
+              <li>Community forum access</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm rounded">
+          <div class="card-header tier-header">Standard</div>
+          <div class="card-body">
+            <p class="fs-2 fw-bold">KES 500 / year</p>
+            <ul class="list-unstyled">
+              <li>All Basic benefits</li>
+              <li>Priority event registration</li>
+              <li>Access to workshops and mentorship</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm rounded">
+          <div class="card-header tier-header">Premium</div>
+          <div class="card-body">
+            <p class="fs-2 fw-bold">KES 1200 / year</p>
+            <ul class="list-unstyled">
+              <li>All Standard benefits</li>
+              <li>Exclusive networking events</li>
+              <li>Scholarship eligibility</li>
+              <li>Leadership training access</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="Testimonials" class="mb-5">
+    <h2 class="mb-4">What Our Members Say</h2>
+    <div class="row g-4">
+      <blockquote class="testimonial-card col-md-6" tabindex="0">
+        <p class="testimonial-quote">"Joining DEKUT Comrades was one of the best decisions I made. The community support and events helped me grow both academically and socially."</p>
+        <footer class="blockquote-footer">Kevin M. - Computer Science</footer>
+      </blockquote>
+      <blockquote class="testimonial-card col-md-6" tabindex="0">
+        <p class="testimonial-quote">"The leadership workshops transformed my confidence and skills. I highly recommend joining for anyone serious about personal growth."</p>
+        <footer class="blockquote-footer">Sarah O. - Business Management</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <section id="signup" aria-labelledby="signupHeading" class="form-section rounded">
+    <h2 id="signupHeading" class="mb-4">Membership Signup</h2>
+    <form id="membershipForm" novalidate>
+      <div class="mb-3">
+        <label for="fullName" class="form-label">Full Name <span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="fullName" required aria-required="true" />
+        <div class="invalid-feedback">Please enter your full name.</div>
+      </div>
+      <div class="mb-3">
+        <label for="emailAddress" class="form-label">Email Address <span class="text-danger">*</span></label>
+        <input type="email" class="form-control" id="emailAddress" required aria-required="true" />
+        <div class="invalid-feedback">Please enter a valid email address.</div>
+      </div>
+      <div class="mb-3">
+        <label for="membershipTier" class="form-label">Membership Tier <span class="text-danger">*</span></label>
+        <select id="membershipTier" class="form-select" required aria-required="true">
+          <option value="" selected disabled>Select a tier</option>
+          <option value="Basic">Basic (Free)</option>
+          <option value="Standard">Standard (KES 500/year)</option>
+          <option value="Premium">Premium (KES 1200/year)</option>
+        </select>
+        <div class="invalid-feedback">Please select a membership tier.</div>
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="termsCheck" required aria-required="true" />
+        <label class="form-check-label" for="termsCheck">I accept the terms and conditions <span class="text-danger">*</span></label>
+        <div class="invalid-feedback">You must accept the terms to proceed.</div>
+      </div>
+      <button type="submit" class="btn btn-primary">Join Now</button>
+    </form>
+  </section>
+</main>
+<!-- Inside membership.html's <section id="signup"> after membershipTier select -->
+
+<div class="mb-3">
+  <label for="paymentMethod" class="form-label">Payment Method <span class="text-danger">*</span></label>
+  <select id="paymentMethod" class="form-select" required aria-required="true" aria-describedby="paymentHelp">
+    <option value="" disabled selected>Select a payment method</option>
+    <option value="mpesa">M-PESA STK Push</option>
+    <option value="creditcard">Credit/Debit Card</option>
+    <option value="paypal">PayPal</option>
+  </select>
+  <div class="invalid-feedback">Please select a payment method.</div>
+  <small id="paymentHelp" class="form-text text-light-50">Select how you'd like to pay your membership fees.</small>
+</div>
+
+<!-- MPESA STK Push phone input shown conditionally with JS -->
+<div class="mb-3" id="mpesaPhoneGroup" style="display:none;">
+  <label for="mpesaPhone" class="form-label">M-PESA Phone Number <span class="text-danger">*</span></label>
+  <input type="tel" maxlength="12" pattern="^\+?2547\d{8}$" class="form-control" id="mpesaPhone" placeholder="+2547XXXXXXXX" aria-describedby="mpesaHelp" />
+  <div class="invalid-feedback">Enter valid phone number starting with +2547xxxxxxx</div>
+  <small id="mpesaHelp" class="form-text text-light-50">Ensure your phone is ready to receive M-PESA STK Push prompt.</small>
+</div>
+
+
+
+<footer aria-label="Site footer" class="text-center py-4">
+  <p>&copy; 2025 DEKUT Comrades Association. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Show/hide MPESA phone input based on payment method
+  const paymentMethod = document.getElementById('paymentMethod');
+  const mpesaPhoneGroup = document.getElementById('mpesaPhoneGroup');
+  const mpesaPhoneInput = document.getElementById('mpesaPhone');
+  
+  paymentMethod.addEventListener('change', () => {
+    if (paymentMethod.value === 'mpesa') {
+      mpesaPhoneGroup.style.display = "block";
+      mpesaPhoneInput.setAttribute('required', 'true');
+      mpesaPhoneInput.setAttribute('aria-required', 'true');
+    } else {
+      mpesaPhoneGroup.style.display = "none";
+      mpesaPhoneInput.removeAttribute('required');
+      mpesaPhoneInput.removeAttribute('aria-required');
+      mpesaPhoneInput.value = '';
+    }
+  });
+  
+  // Extend form validation to include MPESA phone if visible
+  document.getElementById('membershipForm').addEventListener('submit', e => {
+    const form = e.target;
+    if (!form.checkValidity()) {
+      e.preventDefault();
+      e.stopPropagation();
+      form.classList.add('was-validated');
+      return;
+    }
+    if(paymentMethod.value === 'mpesa') {
+      const phonePattern = /^\+?2547\d{8}$/;
+      if(!phonePattern.test(mpesaPhoneInput.value)) {
+        e.preventDefault();
+        mpesaPhoneInput.classList.add('is-invalid');
+        mpesaPhoneInput.focus();
+        form.classList.add('was-validated');
+        return;
+      }
+    }
+    // Simulate MPESA STK Push or payment process here
+    e.preventDefault();
+    alert(`Thank you for your membership signup!\nPayment method: ${paymentMethod.options[paymentMethod.selectedIndex].text}\nIf M-PESA selected, an STK push will be sent shortly.`);
+    form.reset();
+    mpesaPhoneGroup.style.display = "none";
+    form.classList.remove('was-validated');
+  });
+</script>
+<script>
+// Bootstrap custom form validation
+(() => {
+  'use strict';
+
+  const form = document.getElementById('membershipForm');
+  form.addEventListener('submit', e => {
+    if(!form.checkValidity()) {
+      e.preventDefault();
+      e.stopPropagation();
+      form.classList.add('was-validated');
+    } else {
+      e.preventDefault();
+      alert("Thank you for signing up! We will contact you soon.");
+      form.reset();
+      form.classList.remove('was-validated');
+    }
+  });
+})();
+</script>
+</body>
+</html>

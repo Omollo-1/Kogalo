@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DEKUT Comrades Association - Contact</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+<link href="assets/css/style1.css" rel="stylesheet" />
+<style>
+  /* Map */
+  #map {
+    border-radius: 0.5rem;
+    width: 100%;
+    height: 350px;
+    border: 1px solid #ced4da;
+  }
+
+    /* Body with professional red-black gradient */
+ body {
+      background: linear-gradient(135deg, #8B0000 0%, #000000 100%);
+      color: #f1f1f1;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding-top: 70px; /* offset navbar */
+      min-height: 100vh;
+    }
+
+    /* Navbar styling */
+    nav.navbar {
+      background-color: rgba(0, 0, 0, 0.85) !important;
+      box-shadow: 0 0 15px rgba(255, 68, 68, 0.5);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1030;
+    }
+    nav.navbar .navbar-brand,
+    nav.navbar .nav-link {
+      color: #ff4444 !important;
+    }
+    nav.navbar .nav-link:hover,
+    nav.navbar .nav-link.active,
+    nav.navbar .nav-link:focus {
+      color: #f1f1f1 !important;
+      outline: none;
+      text-shadow: 0 0 10px #ff4444;
+    }
+    nav.navbar .dropdown-menu {
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+    nav.navbar .dropdown-menu .dropdown-item {
+      color: #f1f1f1;
+    }
+    nav.navbar .dropdown-menu .dropdown-item:hover,
+    nav.navbar .dropdown-menu .dropdown-item:focus {
+      background-color: #ff4444;
+      color: #000;
+      outline: none;
+    }
+
+    /* Page container */
+    main.container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-bottom: 3rem;
+    }
+
+    /* Heading */
+    h1 {
+      color: #ff4444;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    /* Category filter */
+    label[for="categoryFilter"] {
+      color: #ff7777;
+      font-weight: 600;
+    }
+    #categoryFilter {
+      background-color: #1a1a1a;
+      border: 1px solid #ff4444;
+      color: #f1f1f1;
+    }
+    #categoryFilter:focus {
+      border-color: #ff7777;
+      box-shadow: 0 0 8px #ff7777;
+      outline: none;
+      background-color: #330000;
+    }
+
+    /* Blog post cards */
+    .post-card {
+      background: rgba(0,0,0,0.6);
+      border: 1px solid #ff4444;
+      border-radius: 0.75rem;
+      box-shadow: 0 0 15px rgba(255, 68, 68, 0.5);
+      color: #f1f1f1;
+      transition: box-shadow 0.3s ease, transform 0.2s ease;
+    }
+    .post-card:hover,
+    .post-card:focus-within {
+      box-shadow: 0 0 25px #ff7777;
+      transform: translateY(-6px);
+      outline: none;
+    }
+    .post-card img {
+      border-top-left-radius: 0.75rem;
+      border-top-right-radius: 0.75rem;
+      max-height: 200px;
+      object-fit: cover;
+      width: 100%;
+    }
+    .card-body {
+      padding: 1rem 1.25rem;
+    }
+    .card-title {
+      color: #ff4444;
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+    .card-text {
+      color: #f1f1f1;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+    .text-muted {
+      color: #ff9999 !important;
+      font-size: 0.85rem;
+    }
+    .btn-outline-primary {
+      border-color: #ff4444;
+      color: #ff4444;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .btn-outline-primary:hover,
+    .btn-outline-primary:focus {
+      background-color: #ff4444;
+      color: #000;
+      border-color: #ff4444;
+      outline: none;
+      box-shadow: 0 0 10px #ff4444;
+    }
+
+    /* Pagination styling */
+    nav.pagination-nav {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    .pagination .page-link {
+      color: #ff4444;
+      border-color: #ff4444;
+      background-color: transparent;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+    .pagination .page-link:hover,
+    .pagination .page-link:focus {
+      background-color: #ff4444;
+      color: #000;
+      outline: none;
+    }
+    .pagination .page-item.active .page-link {
+      background-color: #ff4444;
+      border-color: #ff4444;
+      color: #000;
+      font-weight: 700;
+    }
+    .pagination .page-item.disabled .page-link {
+      color: #660000;
+      border-color: #330000;
+      pointer-events: none;
+      background-color: transparent;
+    }
+
+    /* Accessibility focus */
+    a:focus,
+    button:focus,
+    select:focus {
+      outline: 3px solid #ff4444;
+      outline-offset: 2px;
+    }
+
+    /* Responsive */
+    @media (max-width: 767.98px) {
+      .card-title {
+        font-size: 1.1rem;
+      }
+      .post-card img {
+        max-height: 150px;
+      }
+    }
+  
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">DEKUT Comrades Association</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navContent">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="membership.html">Membership</a></li>
+        <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="login.html"><i class="bi bi-box-arrow-in-right"></i> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container py-5">
+
+  <h1 class="mb-4" tabindex="0">Contact Us</h1>
+
+  <div class="row g-4">
+    <section class="col-md-6" aria-labelledby="contactFormHeading">
+      <h2 id="contactFormHeading">Send us a message</h2>
+      <form id="contactForm" novalidate>
+        <div class="mb-3">
+          <label for="contactName" class="form-label">Full Name <span class="text-danger">*</span></label>
+          <input type="text" class="form-control" id="contactName" required aria-required="true" />
+          <div class="invalid-feedback">Please enter your name.</div>
+        </div>
+        <div class="mb-3">
+          <label for="contactEmail" class="form-label">Email Address <span class="text-danger">*</span></label>
+          <input type="email" class="form-control" id="contactEmail" required aria-required="true" />
+          <div class="invalid-feedback">Please enter a valid email.</div>
+        </div>
+        <div class="mb-3">
+          <label for="contactSubject" class="form-label">Subject <span class="text-danger">*</span></label>
+          <input type="text" class="form-control" id="contactSubject" required aria-required="true" />
+          <div class="invalid-feedback">Please enter a subject.</div>
+        </div>
+        <div class="mb-3">
+          <label for="contactMessage" class="form-label">Message <span class="text-danger">*</span></label>
+          <textarea class="form-control" id="contactMessage" rows="5" required aria-required="true"></textarea>
+          <div class="invalid-feedback">Please enter a message.</div>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </section>
+
+    <section class="col-md-6" aria-label="Map and social media">
+      <h2>Our Location</h2>
+      <!-- Embedded Google Map for Dedan Kimathi University, Nyeri -->
+      <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.53981657808!2d36.92942165685365!3d-0.4243278282438361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18264a03432cd165%3A0x68dc721à53f5bcd0!2sDedan%20Kimathi%20University!5e0!3m2!1sen!2ske!4v1686830000000!5m2!1sen!2ske" 
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-label="Map location of Dedan Kimathi University"></iframe>
+
+      <h2 class="mt-4">Connect with us</h2>
+      <div class="d-flex gap-3 fs-3">
+        <a href="https://facebook.com/Gerald Omollo" target="_blank" rel="noopener" aria-label="Facebook" class="text-primary-hover"><i class="bi bi-facebook"></i></a>
+        <a href="https://twitter.com/tuffer_than_ston" target="_blank" rel="noopener" aria-label="Twitter" class="text-primary-hover"><i class="bi bi-twitter"></i></a>
+        <a href="https://instagram.com/tuffer_than_ston" target="_blank" rel="noopener" aria-label="Instagram" class="text-primary-hover"><i class="bi bi-instagram"></i></a>
+      </div>
+    </section>
+  </div>
+
+</main>
+
+<footer class="text-center py-4" style="background:#1a2a6c; color:#e0e7ff;">
+  <p>&copy; 2025 DEKUT Comrades Association. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+(() => {
+  'use strict';
+  const form = document.getElementById('contactForm');
+  form.addEventListener('submit', e => {
+    if(!form.checkValidity()) {
+      e.preventDefault();
+      e.stopPropagation();
+      form.classList.add('was-validated');
+    } else {
+      e.preventDefault();
+      alert("Your message has been sent. Thank you!");
+      form.reset();
+      form.classList.remove('was-validated');
+    }
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,293 @@
+/* Body with catchy professional gradient */
+body {
+  background: linear-gradient(135deg, #8B0000 0%, #000000 100%);
+  color: #f1f1f1;
+  padding-top: 70px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Override navbar to blend with about's dark red-black */
+nav.navbar {
+  background-color: rgba(0, 0, 0, 0.85) !important;
+}
+nav.navbar .navbar-brand,
+nav.navbar .nav-link {
+  color: #ff4444 !important;
+}
+nav.navbar .nav-link:hover,
+nav.navbar .nav-link.active,
+nav.navbar .nav-link:focus {
+  color: #f1f1f1 !important;
+  outline: none;
+}
+
+/* Section headers and text */
+h1, h2, h3, h4 {
+  color: #ff4444;
+}
+
+/* Content containers with translucent black background */
+.section-content {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 0 20px rgba(255, 68, 68, 0.5);
+  margin-bottom: 3rem;
+}
+
+/* Leadership cards with subtle highlight */
+.leader-card {
+  background: rgba(255,68,68,0.15);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  text-align: center;
+  color: #f1f1f1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.leader-card:hover,
+.leader-card:focus {
+  transform: translateY(-6px);
+  box-shadow: 0 0 15px #ff4444;
+  outline: none;
+}
+.leader-photo {
+  border: 3px solid #ff4444;
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+.leader-name {
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 0.3rem;
+}
+.leader-position {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+  color: #ffa6a6;
+}
+.leader-bio {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #ddd;
+  flex-grow: 1;
+}
+
+/* Links adjusted for dark */
+a, a:hover, a:focus {
+  color: #ff6f6f;
+  text-decoration: underline;
+  outline: none;
+}
+
+/* Scrollbar for long bios if needed */
+.leader-bio {
+  max-height: 8em;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 575.98px) {
+  .leader-photo {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* Footer consistent */
+footer {
+  background-color: #000000cc;
+  color: #ff4444;
+  padding: 1.5rem 0;
+  text-align: center;
+  font-weight: 600;
+}
+
+footer a {
+  color: #ff6f6f;
+}
+/* Red & Black color theme adjustments */
+
+body {
+  background-color: #0a0000; /* very dark red/black */
+  color: #f0f0f0;
+}
+
+a, a:hover, a:focus {
+  color: #ff4444 !important;
+  text-decoration: underline;
+}
+
+.btn-primary {
+  background-color: #ff4444 !important;
+  border-color: #ff4444 !important;
+  color: #fff !important;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: #a30000 !important;
+  border-color: #a30000 !important;
+  box-shadow: 0 0 10px #a30000 !important;
+}
+
+.navbar, footer {
+  background-color: #1a0000 !important;
+}
+
+/* Card hover */
+.card:hover {
+  box-shadow: 0 0 25px #ff4444;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Form controls on focus */
+.form-control:focus, select.form-select:focus, textarea.form-control:focus {
+  border-color: #ff4444;
+  box-shadow: 0 0 6px #ff4444;
+}
+
+/* Navbar links */
+.navbar .nav-link {
+  color: #f02e2e !important;
+}
+.navbar .nav-link:hover, .navbar .nav-link.active {
+  color: #fff !important;
+  text-shadow: 0 0 5px #ff4444;
+}
+
+/* Footer links */
+footer a {
+  color: #ff4444 !important;
+}
+footer a:hover, footer a:focus {
+  color: #ff9999 !important;
+  text-decoration: underline;
+}
+/* styles.css */
+
+/* Reset some body padding for sticky navbar */
+body {
+    padding-top: 70px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9fafb;
+    color: #212529;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #1a2a6c !important;
+    box-shadow: 0 4px 12px rgb(26 42 108 / 0.3);
+}
+.navbar .navbar-brand,
+.navbar .nav-link {
+    color: #e0e7ff !important;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link.active,
+.navbar .nav-link:focus {
+    color: #fbbf24 !important;
+    outline: none;
+}
+.navbar .dropdown-menu {
+    background-color: #f8f9fa;
+}
+.navbar .dropdown-menu .dropdown-item:hover,
+.navbar .dropdown-menu .dropdown-item:focus {
+    background-color: #fbbf24;
+    color: #1a2a6c;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #1a2a6c;
+    border: none;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #fbbf24;
+    color: #1a2a6c;
+    outline: none;
+    box-shadow: 0 0 8px #fbbf24;
+}
+
+/* Footer */
+footer {
+    background-color: #1a2a6c;
+    color: #e0e7ff;
+    padding: 2rem 0;
+}
+footer a {
+    color: #fbbf24;
+    text-decoration: none;
+}
+footer a:hover,
+footer a:focus {
+    text-decoration: underline;
+    outline: none;
+}
+
+/* Forms */
+.form-control:focus {
+    border-color: #fbbf24;
+    box-shadow: 0 0 6px #fbbf24;
+}
+
+/* Responsive images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Utility */
+section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* Accessibility focus outline */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid #fbbf24;
+    outline-offset: 2px;
+}
+
+/* Responsive typography */
+h1, h2, h3 {
+    color: #1a2a6c;
+}
+
+/* Carousel captions */
+.carousel-caption {
+    background-color: rgba(26, 42, 108, 0.75);
+    border-radius: 0.5rem;
+}
+
+/* Cards hover */
+.card:hover {
+    box-shadow: 0 0 15px #fbbf24;
+    transition: box-shadow 0.3s ease;
+}
+
+/* Misc */
+.text-primary-hover:hover {
+    color: #fbbf24;
+}
+
+/* Mobile adjustments for hero */
+@media (max-width: 575.98px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+}

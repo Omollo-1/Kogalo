@@ -1,0 +1,265 @@
+<!--
+File: about.html
+Description: DEKUT Comrades Association - About page with professional, catchy body background color and linked navigation.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DEKUT Comrades Association - About</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+<!-- Common Styles -->
+<link href="assets/css/style1.css" rel="stylesheet" />
+
+<style>
+/* Body with catchy professional gradient */
+body {
+  background: linear-gradient(135deg, #8B0000 0%, #000000 100%);
+  color: #f1f1f1;
+  padding-top: 70px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Override navbar to blend with about's dark red-black */
+nav.navbar {
+  background-color: rgba(0, 0, 0, 0.85) !important;
+}
+nav.navbar .navbar-brand,
+nav.navbar .nav-link {
+  color: #ff4444 !important;
+}
+nav.navbar .nav-link:hover,
+nav.navbar .nav-link.active,
+nav.navbar .nav-link:focus {
+  color: #f1f1f1 !important;
+  outline: none;
+}
+
+/* Section headers and text */
+h1, h2, h3, h4 {
+  color: #ff4444;
+}
+
+/* Content containers with translucent black background */
+.section-content {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 0 20px rgba(255, 68, 68, 0.5);
+  margin-bottom: 3rem;
+}
+
+/* Leadership cards with subtle highlight */
+.leader-card {
+  background: rgba(255,68,68,0.15);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  text-align: center;
+  color: #f1f1f1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.leader-card:hover,
+.leader-card:focus {
+  transform: translateY(-6px);
+  box-shadow: 0 0 15px #ff4444;
+  outline: none;
+}
+.leader-photo {
+  border: 3px solid #ff4444;
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+.leader-name {
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 0.3rem;
+}
+.leader-position {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+  color: #ffa6a6;
+}
+.leader-bio {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #ddd;
+  flex-grow: 1;
+}
+
+/* Links adjusted for dark */
+a, a:hover, a:focus {
+  color: #ff6f6f;
+  text-decoration: underline;
+  outline: none;
+}
+
+/* Scrollbar for long bios if needed */
+.leader-bio {
+  max-height: 8em;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 575.98px) {
+  .leader-photo {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* Footer consistent */
+footer {
+  background-color: #000000cc;
+  color: #ff4444;
+  padding: 1.5rem 0;
+  text-align: center;
+  font-weight: 600;
+}
+
+footer a {
+  color: #ff6f6f;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar (same style, links to all pages) -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark shadow-sm" aria-label="Main navigation">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html" tabindex="0" aria-label="DEKUT Comrades Association Home">DEKUT Comrades Association</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarContent"
+      aria-controls="navbarContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="home.html" tabindex="0">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="about.html" tabindex="0">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="membership.html" tabindex="0">Membership</a></li>
+        <li class="nav-item"><a class="nav-link" href="events.html" tabindex="0">Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html" tabindex="0">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html" tabindex="0">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="login.html" tabindex="0"><i class="bi bi-box-arrow-in-right"></i> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container my-5" tabindex="0">
+
+  <section id="mission" class="section-content" aria-labelledby="missionTitle" tabindex="0">
+    <h1 id="missionTitle">Our Mission</h1>
+    <p>
+      To empower a united, supportive community of Dedan Kimathi University students by fostering leadership, academic excellence, social responsibility, and lifelong camaraderie through meaningful activities and advocacy.
+    </p>
+    <ul>
+      <li>Provide academic and personal development support</li>
+      <li>Promote student welfare and advocacy</li>
+      <li>Encourage community service and social involvement</li>
+      <li>Host diverse cultural and social events</li>
+    </ul>
+  </section>
+
+  <section id="vision" class="section-content" aria-labelledby="visionTitle" tabindex="0">
+    <h1 id="visionTitle">Our Vision</h1>
+    <p>
+      To be the premier student association at Dedan Kimathi University, recognized for transforming student life by inspiring growth, responsibility, and impactful leadership, while bridging diverse cultures and backgrounds.
+    </p>
+  </section>
+
+  <section id="history" class="section-content" aria-labelledby="historyTitle" tabindex="0">
+    <h1 id="historyTitle">Our History</h1>
+    <p>
+      Established in 2005, DEKUT Comrades Association began as a passionate student initiative to create a supportive student network. Growing from a small group to thousands strong, we have advanced diverse projects ranging from scholarship programs to leadership academies.
+    </p>
+    <p>
+      Key milestones include the annual Community Outreach Program (2010), Scholarship Initiative (2015), and the Leadership Academy launch (2018), all reflecting our commitment to student growth and community development.
+    </p>
+  </section>
+
+  <section id="leadership" aria-labelledby="leadershipTitle" tabindex="0">
+    <h1 id="leadershipTitle" class="mb-4">Our Leadership</h1>
+    <div class="row g-4">
+
+      <article class="col-sm-6 col-md-4 col-lg-3">
+        <div class="leader-card" tabindex="0" role="group" aria-label="Chairperson profile Jane W. Kamau">
+          <img class="leader-photo" src="https://via.placeholder.com/150?text=Jane+Kamau" alt="Jane W. Kamau, Chairperson" />
+          <h3 class="leader-name">Jane W. Kamau</h3>
+          <p class="leader-position">Chairperson</p>
+          <p class="leader-bio">
+            Third-year Computer Science student passionate about leadership, Jane has driven a membership growth of 30%, emphasizing inclusion and innovation.
+          </p>
+        </div>
+      </article>
+
+      <article class="col-sm-6 col-md-4 col-lg-3">
+        <div class="leader-card" tabindex="0" role="group" aria-label="Vice Chairperson profile David M. Njuguna">
+          <img class="leader-photo" src="https://via.placeholder.com/150?text=David+Njuguna" alt="David M. Njuguna, Vice Chairperson" />
+          <h3 class="leader-name">David M. Njuguna</h3>
+          <p class="leader-position">Vice Chairperson</p>
+          <p class="leader-bio">
+            Specializing in member engagement, David brings business acumen to successful event execution and workshop facilitation.
+          </p>
+        </div>
+      </article>
+
+      <article class="col-sm-6 col-md-4 col-lg-3">
+        <div class="leader-card" tabindex="0" role="group" aria-label="Secretary profile Esther K. Wanjiku">
+          <img class="leader-photo" src="https://via.placeholder.com/150?text=Esther+Wanjiku" alt="Esther K. Wanjiku, Secretary" />
+          <h3 class="leader-name">Esther K. Wanjiku</h3>
+          <p class="leader-position">Secretary</p>
+          <p class="leader-bio">
+            Expert in maintaining clear communication channels and meticulous record keeping, Esther ensures smooth operations of the association.
+          </p>
+        </div>
+      </article>
+
+      <article class="col-sm-6 col-md-4 col-lg-3">
+        <div class="leader-card" tabindex="0" role="group" aria-label="Treasurer profile Peter O. Njoroge">
+          <img class="leader-photo" src="https://via.placeholder.com/150?text=Peter+Njoroge" alt="Peter O. Njoroge, Treasurer" />
+          <h3 class="leader-name">Peter O. Njoroge</h3>
+          <p class="leader-position">Treasurer</p>
+          <p class="leader-bio">
+            Skilled accountant and trustworthy financial overseer, Peter manages funding and budgets with transparency and diligence.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+</main>
+
+<footer role="contentinfo" tabindex="0" aria-label="Site footer">
+  <div class="container">
+    <p>&copy; 2025 DEKUT Comrades Association. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

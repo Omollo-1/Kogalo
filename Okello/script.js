@@ -1,4 +1,24 @@
+// Toggle mobile menu
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
 
+navToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+});
+
+// Contact form submission simulation
+function handleSubmit(event) {
+  event.preventDefault();
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const message = document.getElementById('message').value.trim();
+
+  if (name && email && message) {
+    alert(`Thank you, ${name}! Your message has been sent.`);
+    event.target.reset();
+  }
+  return false;
+}
 // User Management System
 class UserManager {
     constructor() {
@@ -254,6 +274,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Slider/Carousel Functions
     function updateSlider() {
+        // Add transition lock to prevent rapid changes
+        if (slides.dataset.transitioning === 'true') {
+            return;
+        }
+
         const offset = -currentSlide * 100;
         slides.style.transform = `translateX(${offset}%)`;
         updateSliderButtons();
@@ -264,12 +289,18 @@ document.addEventListener('DOMContentLoaded', () => {
             dot.classList.toggle('active', index === currentSlide);
         });
 
-        // Update slide animations
+        // Update slide animations with longer duration
         const currentSlideElement = document.querySelectorAll('.slide')[currentSlide];
         const slideText = currentSlideElement.querySelector('.slide-text');
         slideText.style.animation = 'none';
         slideText.offsetHeight; // Trigger reflow
-        slideText.style.animation = 'slideInLeft 0.5s ease-out';
+        slideText.style.animation = 'slideInLeft 0.8s ease-out';
+
+        // Set transitioning flag
+        slides.dataset.transitioning = 'true';
+        setTimeout(() => {
+            slides.dataset.transitioning = 'false';
+        }, 800); // Match the CSS transition duration
     }
 
     function updateSliderButtons() {
@@ -291,25 +322,56 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Auto-advance slider
-    let sliderInterval = setInterval(nextSlide, 5000);
+    // Auto-advance slider with longer interval
+    let sliderInterval = setInterval(nextSlide, 8000); // Increased from 5000 to 8000ms
 
-    // Pause auto-advance on hover
-    slider.addEventListener('mouseenter', () => clearInterval(sliderInterval));
+    // Pause auto-advance on hover or interaction
+    let userInteracting = false;
+    const resetTimer = () => {
+        clearInterval(sliderInterval);
+        if (!userInteracting) {
+            sliderInterval = setInterval(nextSlide, 8000);
+        }
+    };
+
+    slider.addEventListener('mouseenter', () => {
+        userInteracting = true;
+        clearInterval(sliderInterval);
+    });
+    
     slider.addEventListener('mouseleave', () => {
-        sliderInterval = setInterval(nextSlide, 5000);
+        userInteracting = false;
+        resetTimer();
     });
 
-    // Slider controls
-    nextBtn.addEventListener('click', () => {
-        clearInterval(sliderInterval);
-        nextSlide();
-    });
+    // Slider controls with debounce
+    let isButtonClickable = true;
 
-    prevBtn.addEventListener('click', () => {
+    function handleButtonClick(direction) {
+        if (!isButtonClickable || slides.dataset.transitioning === 'true') {
+            return;
+        }
+
+        isButtonClickable = false;
         clearInterval(sliderInterval);
-        prevSlide();
-    });
+        userInteracting = true;
+
+        if (direction === 'next') {
+            nextSlide();
+        } else {
+            prevSlide();
+        }
+
+        // Reset button clickability after transition
+        setTimeout(() => {
+            isButtonClickable = true;
+            userInteracting = false;
+            resetTimer();
+        }, 800); // Match the CSS transition duration
+    }
+
+    nextBtn.addEventListener('click', () => handleButtonClick('next'));
+    prevBtn.addEventListener('click', () => handleButtonClick('prev'));
 
     // Initialize slider
     updateSliderButtons();

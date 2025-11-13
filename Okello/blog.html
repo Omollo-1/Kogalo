@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DEKUT Comrades Association - Blog</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="assets/css/style1.css" rel="stylesheet" />
+  <style>
+    /* Body with professional red-black gradient */
+    body {
+      background: linear-gradient(135deg, #8B0000 0%, #000000 100%);
+      color: #f1f1f1;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding-top: 70px; /* offset navbar */
+      min-height: 100vh;
+    }
+
+    /* Navbar styling */
+    nav.navbar {
+      background-color: rgba(0, 0, 0, 0.85) !important;
+      box-shadow: 0 0 15px rgba(255, 68, 68, 0.5);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1030;
+    }
+    nav.navbar .navbar-brand,
+    nav.navbar .nav-link {
+      color: #ff4444 !important;
+    }
+    nav.navbar .nav-link:hover,
+    nav.navbar .nav-link.active,
+    nav.navbar .nav-link:focus {
+      color: #f1f1f1 !important;
+      outline: none;
+      text-shadow: 0 0 10px #ff4444;
+    }
+    nav.navbar .dropdown-menu {
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+    nav.navbar .dropdown-menu .dropdown-item {
+      color: #f1f1f1;
+    }
+    nav.navbar .dropdown-menu .dropdown-item:hover,
+    nav.navbar .dropdown-menu .dropdown-item:focus {
+      background-color: #ff4444;
+      color: #000;
+      outline: none;
+    }
+
+    /* Page container */
+    main.container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-bottom: 3rem;
+    }
+
+    /* Heading */
+    h1 {
+      color: #ff4444;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    /* Category filter */
+    label[for="categoryFilter"] {
+      color: #ff7777;
+      font-weight: 600;
+    }
+    #categoryFilter {
+      background-color: #1a1a1a;
+      border: 1px solid #ff4444;
+      color: #f1f1f1;
+    }
+    #categoryFilter:focus {
+      border-color: #ff7777;
+      box-shadow: 0 0 8px #ff7777;
+      outline: none;
+      background-color: #330000;
+    }
+
+    /* Blog post cards */
+    .post-card {
+      background: rgba(0,0,0,0.6);
+      border: 1px solid #ff4444;
+      border-radius: 0.75rem;
+      box-shadow: 0 0 15px rgba(255, 68, 68, 0.5);
+      color: #f1f1f1;
+      transition: box-shadow 0.3s ease, transform 0.2s ease;
+    }
+    .post-card:hover,
+    .post-card:focus-within {
+      box-shadow: 0 0 25px #ff7777;
+      transform: translateY(-6px);
+      outline: none;
+    }
+    .post-card img {
+      border-top-left-radius: 0.75rem;
+      border-top-right-radius: 0.75rem;
+      max-height: 200px;
+      object-fit: cover;
+      width: 100%;
+    }
+    .card-body {
+      padding: 1rem 1.25rem;
+    }
+    .card-title {
+      color: #ff4444;
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+    .card-text {
+      color: #f1f1f1;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+    .text-muted {
+      color: #ff9999 !important;
+      font-size: 0.85rem;
+    }
+    .btn-outline-primary {
+      border-color: #ff4444;
+      color: #ff4444;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .btn-outline-primary:hover,
+    .btn-outline-primary:focus {
+      background-color: #ff4444;
+      color: #000;
+      border-color: #ff4444;
+      outline: none;
+      box-shadow: 0 0 10px #ff4444;
+    }
+
+    /* Pagination styling */
+    nav.pagination-nav {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    .pagination .page-link {
+      color: #ff4444;
+      border-color: #ff4444;
+      background-color: transparent;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+    .pagination .page-link:hover,
+    .pagination .page-link:focus {
+      background-color: #ff4444;
+      color: #000;
+      outline: none;
+    }
+    .pagination .page-item.active .page-link {
+      background-color: #ff4444;
+      border-color: #ff4444;
+      color: #000;
+      font-weight: 700;
+    }
+    .pagination .page-item.disabled .page-link {
+      color: #660000;
+      border-color: #330000;
+      pointer-events: none;
+      background-color: transparent;
+    }
+
+    /* Accessibility focus */
+    a:focus,
+    button:focus,
+    select:focus {
+      outline: 3px solid #ff4444;
+      outline-offset: 2px;
+    }
+
+    /* Responsive */
+    @media (max-width: 767.98px) {
+      .card-title {
+        font-size: 1.1rem;
+      }
+      .post-card img {
+        max-height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark" aria-label="Main navigation">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html" tabindex="0" aria-label="DEKUT Comrades Association Home">DEKUT Comrades Association</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navContent">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="home.html" tabindex="0">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html" tabindex="0">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="membership.html" tabindex="0">Membership</a></li>
+        <li class="nav-item"><a class="nav-link" href="events.html" tabindex="0">Events</a></li>
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="blog.html" tabindex="0">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html" tabindex="0">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="login.html" tabindex="0"><i class="bi bi-box-arrow-in-right"></i> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container" tabindex="0" aria-live="polite">
+
+  <h1>Blog & News</h1>
+
+  <!-- Category filter -->
+  <div class="mb-4">
+    <label for="categoryFilter" class="form-label">Filter by category:</label>
+    <select id="categoryFilter" class="form-select" aria-controls="postsList" aria-label="Filter blog posts by category">
+      <option value="all" selected>All</option>
+      <option value="news">News</option>
+      <option value="student stories">Student Stories</option>
+      <option value="updates">Updates</option>
+    </select>
+  </div>
+
+  <!-- Posts List -->
+  <div id="postsList" class="row g-4">
+
+    <article class="col-md-6 post-card" data-category="news" tabindex="0" role="article" aria-label="New Initiative Announcement blog post">
+      <img src="https://via.placeholder.com/600x300?text=New+Association+Initiative" alt="New Initiative Announcement" />
+      <div class="card-body">
+        <h5 class="card-title">New Initiative to Support Remote Students</h5>
+        <p class="card-text">Launching online mentorship to connect remote learners with experienced peers and alumni. Enhance your learning no matter where you are.</p>
+        <p class="text-muted small mb-2">April 25, 2024 | Category: News</p>
+        <a href="#" class="btn btn-outline-primary" aria-label="Read more about New Initiative to Support Remote Students">Read More</a>
+      </div>
+    </article>
+
+    <article class="col-md-6 post-card" data-category="student stories" tabindex="0" role="article" aria-label="From Club Member to Tech Entrepreneur blog post">
+      <img src="https://via.placeholder.com/600x300?text=Student+Achievement" alt="Student Story" />
+      <div class="card-body">
+        <h5 class="card-title">From Club Member to Tech Entrepreneur</h5>
+        <p class="card-text">Read about Mary Njeri's journey from joining DCA to launching a successful startup in Nairobi's tech scene.</p>
+        <p class="text-muted small mb-2">March 30, 2024 | Category: Student Stories</p>
+        <a href="#" class="btn btn-outline-primary" aria-label="Read more about From Club Member to Tech Entrepreneur">Read More</a>
+      </div>
+    </article>
+
+    <article class="col-md-6 post-card" data-category="updates" tabindex="0" role="article" aria-label="Spring Cultural Fest Postponed blog post">
+      <img src="https://via.placeholder.com/600x300?text=Event+Postponed" alt="Event Postponed" />
+      <div class="card-body">
+        <h5 class="card-title">Spring Cultural Fest Postponed</h5>
+        <p class="card-text">Due to unforeseen circumstances, the Cultural Festival will now be held in July. Stay tuned for new dates and activities.</p>
+        <p class="text-muted small mb-2">April 10, 2024 | Category: Updates</p>
+        <a href="#" class="btn btn-outline-primary" aria-label="Read more about Spring Cultural Fest Postponed">Read More</a>
+      </div>
+    </article>
+
+    <article class="col-md-6 post-card" data-category="student stories" tabindex="0" role="article" aria-label="Volunteer Stories blog post">
+      <img src="https://via.placeholder.com/600x300?text=Volunteer+Experience" alt="Volunteer Experience" />
+      <div class="card-body">
+        <h5 class="card-title">Volunteer Stories: Impacting Local Communities</h5>
+        <p class="card-text">Hear from our members about what volunteering means to them and how their experiences changed their perspectives.</p>
+        <p class="text-muted small mb-2">February 23, 2024 | Category: Student Stories</p>
+        <a href="#" class="btn btn-outline-primary" aria-label="Read more about Volunteer Stories">Read More</a>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- Pagination -->
+  <nav aria-label="Blog pagination" class="pagination-nav">
+    <ul class="pagination">
+      <li class="page-item disabled"><a href="#" class="page-link" tabindex="-1" aria-disabled="true">Previous</a></li>
+      <li class="page-item active" aria-current="page"><a href="#" class="page-link">1</a></li>
+      <li class="page-item"><a href="#" class="page-link">2</a></li>
+      <li class="page-item"><a href="#" class="page-link">3</a></li>
+      <li class="page-item"><a href="#" class="page-link">Next</a></li>
+    </ul>
+  </nav>
+
+</main>
+
+<footer role="contentinfo" style="background: rgba(0,0,0,0.85); color: #ff4444; text-align: center; padding: 1.5rem 0; margin-top: 3rem;">
+  <p>&copy; 2025 DEKUT Comrades Association. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Filter blog posts by category
+  const filterSelect = document.getElementById('categoryFilter');
+  const posts = document.querySelectorAll('.post-card');
+
+  filterSelect.addEventListener('change', () => {
+    const category = filterSelect.value;
+    posts.forEach(post => {
+      if (category === 'all' || post.dataset.category === category) {
+        post.style.display = 'block';
+      } else {
+        post.style.display = 'none';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
